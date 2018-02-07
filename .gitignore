@@ -1,3 +1,6 @@
+web/static/* linguist-vendored
+priv/static/* linguist-vendored
+
 /_build
 /deps
 /doc
