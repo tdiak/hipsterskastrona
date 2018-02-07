@@ -1,5 +1,6 @@
-web/static/* linguist-vendored
-priv/static/* linguist-vendored
+* linguist-vendored
+web/static/* linguist-vendored=false
+priv/static/* linguist-vendored=false
 
 /_build
 /deps
