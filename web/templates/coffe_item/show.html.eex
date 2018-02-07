@@ -1,0 +1,23 @@
+<h2>Show coffe item</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @coffe_item.name %>
+  </li>
+
+  <li>
+    <strong>Lng:</strong>
+    <%= @coffe_item.lng %>
+  </li>
+
+  <li>
+    <strong>Lat:</strong>
+    <%= @coffe_item.lat %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: coffe_item_path(@conn, :edit, @coffe_item) %>
+<%= link "Back", to: coffe_item_path(@conn, :index) %>

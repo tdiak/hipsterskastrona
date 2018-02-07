@@ -1,0 +1,30 @@
+<h2>Listing coffe</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Lng</th>
+      <th>Lat</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for coffe_item <- @coffe do %>
+    <tr>
+      <td><%= coffe_item.name %></td>
+      <td><%= coffe_item.lng %></td>
+      <td><%= coffe_item.lat %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: coffe_item_path(@conn, :show, coffe_item), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: coffe_item_path(@conn, :edit, coffe_item), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: coffe_item_path(@conn, :delete, coffe_item), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New coffe item", to: coffe_item_path(@conn, :new) %>

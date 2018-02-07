@@ -1,0 +1,6 @@
+<h2>New coffe item</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: coffe_item_path(@conn, :create) %>
+
+<%= link "Back", to: coffe_item_path(@conn, :index) %>

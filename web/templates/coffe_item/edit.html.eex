@@ -1,0 +1,6 @@
+<h2>Edit coffe item</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: coffe_item_path(@conn, :update, @coffe_item) %>
+
+<%= link "Back", to: coffe_item_path(@conn, :index) %>

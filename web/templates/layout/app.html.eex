@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <%# <script src="https://unpkg.com/vue"></script> %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.6.1/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-google-maps/0.1.17/vue-google-maps.js"></script>
+    <title>Hipster</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  </head>
+
+  <body>
+    <script type="text/x-template" id="modal">
+
+      <div class="modal">
+        <div class="modal-header"><h2>{{ title }}</h2></div>
+        <div class="modal-body" v-if="is_hipster">
+          <button v-on:click='hide_modal()'>TAK</button>
+          <button v-on:click='redirect_page()'>NIE</button>
+        </div>
+      </div>
+
+    </script>
+
+    <div id="app" class="container" v-bind:class="{ 'modal-visible': showModal }">
+        <header>
+          <h1>Hipsterska strona!!!</h1>
+          <nav>
+            <ul>
+              <li><a href="/">Strona główna</a></li>
+              <li><a href="/kawa">Hipsterska kawa</a></li>
+              <li><a>Wybierz swój hipsterski posiłek</a></li>
+              <li><a>Crossfit</a></li>
+              <li><a href="/#/posts">Hipsterskie newsy</a></li>
+            </ul>
+          </nav>
+        </header>
+        <modal @hide="hideModal"></modal>
+        <main>
+          <%= render @view_module, @view_template, assigns %>
+        </main>
+    </div> <!-- /container -->
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>
